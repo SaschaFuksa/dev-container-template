@@ -1,0 +1,30 @@
+[tool.uv.dependencies]
+# --- Core ---
+requests = "*"
+flask = "*"
+fastapi = "*"
+uvicorn = "*"
+
+# --- Optional: MCP (Model Context Protocol) ---
+#mcp = "*"
+#pydantic = "*"
+#websockets = "*"
+#asyncio = "*"
+#nest-asyncio = "*"
+#langchain = "*"
+#langchain-core = "*"
+#langchain-community = "*"
+#langchain-mcp-adapters = "*"
+#langchain-ollama = "*"
+#httpx = "*"
+
+# --- Optional: Data Science ---
+#pandas = "*"
+#numpy = "*"
+#matplotlib = "*"
+#jupyter = "*"
+
+[tool.uv.dev-dependencies]
+pytest = "*"
+mypy = "*"
+ruff = "*"
