@@ -41,7 +41,7 @@
     8000,
     5000
   ],
-  "postCreateCommand": "pip install uv && uv sync",
+  "postCreateCommand": "pip install uv && uv lock && uv sync",
   "remoteUser": "vscode",
   "containerEnv": {
     "GIT_AUTHOR_NAME": "SaschaFuksa",
