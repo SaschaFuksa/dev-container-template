@@ -9,7 +9,6 @@ dependencies = [
     "flask",
     "fastapi",
     "uvicorn"
-    
     # --- Optional: MCP (kommentiert) ---
     # "mcp",
     # "pydantic",
@@ -24,7 +23,7 @@ dependencies = [
     # "httpx"
 ]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
     "pytest",
     "mypy",
