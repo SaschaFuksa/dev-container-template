@@ -1,3 +1,6 @@
+[tool.setuptools]
+packages = { find = { where = ["src"] } }
+
 [project]
 name = "dev-container-template"
 version = "0.1.0"
