@@ -30,11 +30,14 @@
         }
       },
       "extensions": [
-        "ms-python.python",
-        "ms-python.vscode-pylance",
         "charliermarsh.ruff",
+        "continue.continue",
         "ms-python.pylint",
-        "continue.continue"
+        "ms-python.python",
+        "ms-python.mypy-type-checker",
+        "ms-python.vscode-pylance",
+        "pkief.material-icon-theme",
+        "oderwat.indent-rainbow"
       ]
     }
   },
