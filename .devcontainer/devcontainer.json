@@ -37,6 +37,7 @@
         "ms-python.mypy-type-checker",
         "ms-python.vscode-pylance",
         "pkief.material-icon-theme",
+        "jebbs.plantuml",
         "oderwat.indent-rainbow"
       ]
     }
