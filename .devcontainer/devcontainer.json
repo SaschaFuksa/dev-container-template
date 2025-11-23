@@ -25,9 +25,6 @@
       ]
     }
   },
-  "containerEnv": {
-    "PATH": "/home/vscode/.local/bin:/usr/local/bin:/usr/bin:/bin"
-  },
   "remoteUser": "vscode",
   "postCreateCommand": "uv sync"
 }
