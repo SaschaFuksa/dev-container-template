@@ -1,0 +1,151 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Format with Ruff",
+            "type": "shell",
+            "command": "uv run ruff format --check --diff;uv run ruff format;uv run ruff check --fix",
+            "problemMatcher": [],
+        },
+        {
+            "label": "Run Ruff check",
+            "type": "shell",
+            "command": "uv run ruff check",
+            "problemMatcher": {
+                "owner": "ruff",
+                "source": "ruff",
+                "fileLocation": [
+                    "absolute",
+                ],
+                "pattern": [
+                    {
+                        "regexp": "^(.*):(\\d+)",
+                        "file": 1,
+                        "line": 2,
+                    },
+                    {
+                        "regexp": "^        (D\\d+): (.*)$",
+                        "code": 1,
+                        "message": 2,
+                    },
+                ],
+                "severity": "warning",
+            },
+        },
+        {
+            "label": "Run pylint src",
+            "type": "shell",
+            "command": "uv run pylint --output-format=colorized -j0 src/",
+            "problemMatcher": {
+                "owner": "pylint",
+                "source": "pylint",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}",
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+): (\\w+): (.*) \\((.*)\\)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5,
+                    "code": 6,
+                },
+                "severity": "warning",
+            },
+        },
+        {
+            "label": "Run pylint tests",
+            "type": "shell",
+            "command": "uv run pylint --output-format=colorized -j0 tests/",
+            "problemMatcher": {
+                "owner": "pylint",
+                "source": "pylint",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}",
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+): (\\w+): (.*) \\((.*)\\)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5,
+                    "code": 6,
+                },
+                "severity": "warning",
+            },
+        },
+        {
+            "label": "Run mypy",
+            "type": "shell",
+            "command": "uv run mypy --install-types --non-interactive --pretty",
+            "problemMatcher": {
+                "owner": "mypy",
+                "source": "mypy",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}",
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+): (\\w+): (.*)  \\[(.*)\\]$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5,
+                    "code": 6,
+                },
+            },
+        },
+        {
+            "label": "Run all checks",
+            "dependsOn": [
+                "Format with Ruff",
+                "Run Ruff check",
+                "Run pylint src",
+                "Run pylint tests",
+                "Run mypy",
+                "",
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true,
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "Clear diagnostics of all checks",
+            "type": "shell",
+            "command": "echo",
+            "args": [
+                "Clearing diagnostics of all checks...",
+            ],
+            "problemMatcher": [
+                {
+                    "owner": "mypy",
+                    "base": "$msCompile",
+                },
+                {
+                    "owner": "pylint",
+                    "base": "$msCompile",
+                },
+                {
+                    "owner": "ruff",
+                    "base": "$msCompile",
+                },
+            ],
+            "presentation": {
+                "reveal": "silent",
+            },
+        },
+        {
+            "label": "Run tests",
+            "type": "shell",
+            "command": "uv run pytest --color=yes --junitxml=report.xml",
+            "problemMatcher": [],
+        },
+    ],
+}

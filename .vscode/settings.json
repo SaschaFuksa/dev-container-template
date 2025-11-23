@@ -1,0 +1,44 @@
+{
+    // Python tool chain
+    "ruff.importStrategy": "fromEnvironment",
+    "python.languageServer": "Pylance",
+
+    // general
+    "files.autoSave": "onFocusChange",
+    "editor.tabSize": 4,
+
+    // Settings for testing with pytest
+    "python.testing.pytestArgs": ["--config-file=pyproject.toml"],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+
+    // Per language settings
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.autoFormatStrings": false,
+    "python.analysis.include": ["**/*.py"],
+    "python.analysis.exclude": ["**/site-packages/**", "**/distutils/**", "**/node_modules/**", "**/__pycache__/**", "**/.*/**", "**/data/**", "**/dist/**", "**/doc/**", "**/docker/**", "**/config/**"],
+    "python.analysis.ignore": ["."],
+    "python.analysis.typeCheckingMode": "basic",
+    "ruff.lineLength": 120,
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "always",
+            "source.organizeImports": "always"
+        },
+        
+        // Formatter
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+
+        // Vertical rules indicating char pos
+        "editor.rulers": [120],
+    },
+    
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+
+    "[yaml]": {
+        "editor.tabSize": 2
+    },
+}
