@@ -5,6 +5,10 @@
   },
   "customizations": {
     "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/home/vscode/venv/bin/python",
+        "python.terminal.activateEnvironment": true
+      },
       "extensions": [
         "ms-python.python",
         "ms-python.pylint",
@@ -15,17 +19,15 @@
         "pkief.material-icon-theme",
         "jebbs.plantuml",
         "oderwat.indent-rainbow",
-        "spmeesseman.vscode-taskexplorer"
+        "spmeesseman.vscode-taskexplorer",
+        "github.copilot",
+        "github.copilot-chat"
       ]
     }
   },
   "containerEnv": {
-    "VIRTUAL_ENV": "/usr/local",
-    "PATH": "/home/vscode/.local/bin:/usr/local/bin:/usr/bin:/bin",
-    "GIT_AUTHOR_NAME": "SaschaFuksa",
-    "GIT_AUTHOR_EMAIL": "sascha.fuksa@gmail.com",
-    "GIT_COMMITTER_NAME": "SaschaFuksa",
-    "GIT_COMMITTER_EMAIL": "sascha.fuksa@gmail.com"
+    "PATH": "/home/vscode/.local/bin:/usr/local/bin:/usr/bin:/bin"
   },
-  "postCreateCommand": "pip install uv && uv sync"
+  "remoteUser": "vscode",
+  "postCreateCommand": "uv sync"
 }
