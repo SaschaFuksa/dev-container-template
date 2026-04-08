@@ -21,7 +21,7 @@
         "spmeesseman.vscode-taskexplorer",
         "github.copilot",
         "github.copilot-chat",
-        "anthropic.claude-code",
+        "anthropic.claude-code"
       ]
     }
   },
