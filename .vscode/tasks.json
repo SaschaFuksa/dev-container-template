@@ -42,9 +42,9 @@
             }
         },
         {
-            "label": "Run tests",
+            "label": "Run unit tests",
             "type": "shell",
-            "command": "uv run pytest --color=yes",
+            "command": "uv run pytest -m \"not integration\" --color=yes",
             "group": {
                 "kind": "test",
                 "isDefault": true
@@ -52,11 +52,25 @@
             "problemMatcher": []
         },
         {
+            "label": "Run integration tests",
+            "type": "shell",
+            "command": "uv run pytest -m integration --color=yes",
+            "group": "test",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run all tests",
+            "type": "shell",
+            "command": "uv run pytest --color=yes",
+            "group": "test",
+            "problemMatcher": []
+        },
+        {
             "label": "Run all checks",
             "dependsOn": [
-                "Format & Fix (Ruff)",
+                "Run Ruff check",
                 "Run mypy",
-                "Run tests"
+                "Run unit tests"
             ],
             "group": {
                 "kind": "build",
